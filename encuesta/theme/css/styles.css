@@ -1,0 +1,136 @@
+table
+{
+	border: 0 none;
+	border-collapse: collapse;
+	border-spacing: 0;
+	color: #222021;
+	font-family: verdana, arial, sans-serif;
+	font-size: 10px;
+	margin: auto;
+}
+
+table.stadistics
+{
+	font-size: 13px;
+	margin: 50px auto; 
+}
+
+table.stadistics_a
+{
+	border: 1px solid #000;
+}
+
+table.stadistics_b
+{
+	margin: 0 auto 50px;
+}
+
+table.stadistics thead
+{
+	background-color: #294a9d;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+}
+
+table.stadistics tfoot tr td,
+table.stadistics thead tr td,
+table.stadistics thead tr th
+{
+	padding: 5px;
+}
+
+table.stadistics thead tr:first-child td,
+table.stadistics thead tr:first-child th,
+table.stadistics thead tr.first-child td,
+table.stadistics thead tr.first-child th
+{
+	border: 1px solid #fff;
+}
+
+table.stadistics thead tr.filters td
+{
+	background-color: #fff;
+}
+
+table.stadistics thead tr.filters td input
+{
+	border: 1px solid #c0c0c0;
+}
+
+table.stadistics tr td
+{
+	padding: 0 10px;
+}
+
+table.stadistics tbody tr:hover td,
+table.stadistics_a tbody tr:hover td.answer
+{
+	background-color: #e6eaf3;
+	cursor: pointer;
+}
+
+table.stadistics tbody tr td
+{
+	padding: 3px 10px;
+}
+
+table.stadistics tbody tr td.question
+{
+	background-color: #aa4643;
+	color: #fff;
+}
+
+.jGrowl-message
+{
+	font-weight: normal !important;
+	text-align: justify;
+}
+
+.colorln
+{
+	color: #fff;
+}
+
+.config
+{
+	max-width: 1000px;
+	min-width: 800px;
+	margin: auto;
+}
+
+.config-seo
+{
+    overflow: hidden;
+	font-size: 12px;
+	font-family: verdana, arial, sans-serif;
+}
+
+.config-seo:hover
+{
+    background: #f5f6f1;
+	cursor: pointer;
+}
+
+.config-seo div
+{
+    color: #222021;
+    cursor: pointer;
+    float: left;
+}
+
+.config-seo div.ui-icon
+{
+    background: inherited;
+    height: 16px !important;
+    width: 16px !important;
+    float: left;
+    margin-top: -2px;
+}
+
+.config-seo-box
+{
+    padding: 20px 0;
+    display: none;
+    clear: both;
+}
