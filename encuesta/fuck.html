@@ -1,0 +1,645 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>HTML Table Filter Generator script by Max Guglielmi</title>
+ 	
+	<script src="tablefilter/tablefilter.js" language="javascript" type="text/javascript"></script>
+</head>
+
+<body>
+<div id="container">
+
+	<div id="banner">
+		 	
+	<div id="navmenu">
+		<ul>
+			<li><a id="lnk01" href=".">Home</a></li>
+			<li><a id="lnk02" href="./ex.php">Examples</a></li>
+			<li><a id="lnk11" href="./demos.php">Demos</a></li>
+			<li><a id="lnk03" href="./doc.php">Doc</a></li>
+      		<li><a id="lnk04" href="./dwn.php">Download</a></li>
+			<li><a id="lnk05" href="./comments.php">Comments</a></li>
+			<li><a id="lnk06" href="./log.php">Changelog</a></li>
+			<li><a id="lnk07" href="./ref.php">References</a></li>
+          	<li><a id="lnk08" href="./todo.php">To do</a></li>
+			<li><a id="lnk09" href="./contact.php">Contact</a></li>
+			<li><a id="lnk10" href="./contact.php?t=premium">Premium support</a></li>
+			<li><input type="text" id="searchBox" name="q" value="Search" autocomplete="off" 
+					onfocus="if(this.value=='Search'){ this.value=''; };" onblur="if(this.value==''){ this.value='Search'};" /></li>
+		</ul>
+		<div id="searchResults">
+			<div style="text-align:right;">
+				<a href="javascript:;" onclick="tf_Id('searchResults').style.display = 'none';">Close</a>
+			</div>
+			<h2>Search results</h2>
+			<div id="searchcontrol">Loading...</div>
+			<div style="text-align:center;">
+				<a href="javascript:;" onclick="tf_Id('searchResults').style.display = 'none';">Close</a>
+			</div>
+		</div>		
+	</div>
+
+	<script src="includes/search.js" language="javascript" type="text/javascript"></script>	</div>
+	
+	<!-- BEGIN CONTENT -->
+	<div id="content">
+		<h1>HTML Table Filter Generator</h1>
+		<h2>Description</h2><a name="desc" id="desc"></a>
+        <p>This script adds to any html table a &quot;filter by column&quot; feature 
+          that enables users to filter and limit the data displayed within a long 
+          table. It even works on tables with uneven rows. The script automatically 
+          adds a filter grid bar at the top of the desired table. Users can use 
+          the following operators to filter columns containing numeric data: <strong>&lt;</strong>, 
+          <strong>&lt;=</strong>, <strong>&gt;</strong>, <strong>&gt;=</strong>.</p>
+        <div style="float:left;">
+		<ul>
+          <li>Version: 2.1</li>
+          <li>License type: <a href="license.php">MIT License</a></li>
+		  <li style="margin:10px 5px 5px -15px; list-style:none;"><a href="dwn.php" class="btndwn" title="Download latest release"></a></li>
+		 </ul>	
+		</div>	
+		
+		<div class="payPal" style="float:right;">
+			<p>Support this project: </p>
+			 
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_donations">
+          <input type="hidden" name="business" value="maxgug@hotmail.com">
+          <input type="hidden" name="item_name" value="HTML Table Filter Generator">
+          <input type="hidden" name="no_shipping" value="0">
+          <input type="hidden" name="no_note" value="1">
+          <input type="hidden" name="lc" value="US">
+          <input type="hidden" name="currency_code" value="USD">
+          <input type="hidden" name="tax" value="0">
+          <input type="hidden" name="bn" value="PP-DonationsBF">
+          <input type="image" src="images/x-click-but04.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" style="border:0;">
+          <img alt="" border="0" src="images/pixel.gif" width="1" height="1" style="border:0;"> 
+        </form>
+	
+	
+		</div>
+		
+		<div class="clearBoth"></div>
+		
+		<a name="features" id="features"></a>
+		<h2>Main features</h2>
+		<div>Open source and completely free HTML table enhancer:</div>
+		<ul>
+			<li>Convert a regular HTML table into an advanced grid component providing:
+				<ul> 
+					<li>Advanced columns filtering model</li>
+					<li>Sorting and pagination facilities</li>
+					<li>Complete selection model</li>
+					<li>Extended keyboard navigation</li>
+					<li>Inline cell or row editing</li>
+					<li>Row insertion or deleting</li>
+					<li>And even more behaviors...</li>
+				</ul>
+			</li>
+			<li>Attach to an existing HTML table</li>
+			<li>Integration with any server-side technology as this is a pure client-side solution</li>
+			<li>Callbacks for all events, and delegates for most actions</li>
+			<li>Based on plain javascript, that is, independent from any javascript 
+			framework but compatible with any of them (no for..in, no overriding $() etc.)</li>
+			<li>Exhaustive <a href="doc.php">documentation</a> and API</li>
+			<li>Valuable support provided under a <a href="contact.php?t=premium">Premium request</a></li>
+		</ul>
+        
+		<a name="new" id="new"></a>
+        <h2>What's new?</h2>		
+		<h3>Version 2.1</h3>
+		<p>This version is a minor release fixing some minor bugs introduced in v2.0</p>
+		<ul>
+			<li>The <a href="http://edittable.free.fr" target="_blank" title="ezEditTable is an open source javascript code aimed at enhancing regular HTML tables by adding features such as inline editing components, advanced selection and keyboard navigation - Developed by Max Guglielmi">ezEditTable</a> stylesheet is not imported by default anymore as it is not necessary (ezEditTable_config.loadStylesheet property)</li>
+			<li>The Rows counter is now refreshed when rows are added or deleted in edition mode</li>
+		</ul>
+		<h3>Version 2.0</h3>
+		<p>This version is a major release as it adds selection and edition features by integrating the <a href="http://edittable.free.fr" target="_blank" title="ezEditTable is an open source javascript code aimed at enhancing regular HTML tables by adding features such as inline editing components, advanced selection and keyboard navigation - Developed by Max Guglielmi">ezEditTable</a> script by Max Guglielmi:</p>
+		<ul>
+			<li>Advanced row and cell selection, keyboard navigation, inline cell editing, rows insertion and deleting can be enabled now by using the 
+				 <strong>selectable</strong> and <strong>editable</strong> properties and the <strong>ezEditTable_config</strong> configuration object.
+				 This configuration object is encapsulated in the TF configuration object</li>
+			<li>All the script files are now contained in a <i>TableFilter</i> folder, and the <strong>base_path</strong> property defines the location 
+				of the script ressources which is 'TableFilter/' by default. <b>Note</b>: if you upgrade from a previous version, make sure that the tablefilter.js 
+				file is imported in your page from the right directory ('TableFilter/'). Of course, the script always gives the option to define custom 
+				locations for every single item such as, extensions, themes, images etc... Refer to <a href="doc.php">documentation</a> to find the right property</li>
+			<li>The toolbar buttons (paging and clear buttons) are shown by default as icons instead of textual elements. 
+				By disabling the <strong>enable_icons</strong> property the icons are displayed as textual elements again</li>
+		</ul>
+        <h3>Sortable Table extension v1.8</h3>
+		<p>If you upgrade the TF script to v.2.0, it is recommended to install at least v1.7 of the sorting script:</p>
+		<ul>
+			<li>Bug fix: sort takes into account results per page changes now</li>
+		</ul>
+		
+		<a name="operators" id="operators"></a>
+        <h2>Filter operators</h2>
+        <p> In order to perform advanced searches, you can use the following filter 
+          operators in the text-box filters: </p>
+        <table class="TF" cellspacing="0" cellpadding="0">
+          <tr> 
+            <th>Operator</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Example</th>
+          </tr>
+          <tr> 
+            <td>&lt;</td>
+            <td>Values lower than search term are matched</td>
+            <td>number</td>
+            <td>&lt;1412</td>
+          </tr>
+          <tr> 
+            <td>&lt;=</td>
+            <td>Values lower than or equal to search term are matched</td>
+            <td>number</td>
+            <td>&lt;=1412</td>
+          </tr>
+          <tr> 
+            <td>&gt;</td>
+            <td>Values greater than search term are matched</td>
+            <td>number</td>
+            <td>&gt;1412</td>
+          </tr>
+          <tr> 
+            <td>&gt;=</td>
+            <td>Values greater than or equal to search term are matched</td>
+            <td>number</td>
+            <td>&gt;=1412</td>
+          </tr>
+          <tr> 
+            <td>=</td>
+            <td>Exact match search: only the whole search term(s) is matched</td>
+            <td>string / number</td>
+            <td>=Sydney</td>
+          </tr>
+          <tr> 
+            <td>*</td>
+            <td>Data containing search term(s) is matched (default operator)</td>
+            <td>string / number</td>
+            <td>*Syd</td>
+          </tr>
+          <tr> 
+            <td>!</td>
+            <td>Data that doesn't contain search term(s) is matched</td>
+            <td>string / number</td>
+            <td>!Sydney</td>
+          </tr>
+          <tr> 
+            <td>{</td>
+            <td>Data starting with search term is matched</td>
+            <td>string / number</td>
+            <td>{S</td>
+          </tr>
+          <tr> 
+            <td>}</td>
+            <td>Data ending with search term is matched</td>
+            <td>string / number</td>
+            <td>}y</td>
+          </tr>
+          <tr> 
+            <td>||</td>
+            <td>Data containing at least one of the search terms is matched</td>
+            <td>string / number</td>
+            <td>Sydney || Adelaide</td>
+          </tr>
+          <tr> 
+            <td>&amp;&amp;</td>
+            <td>Data containing search terms is matched</td>
+            <td>string / number</td>
+            <td>&gt;4.3 &amp;&amp; &lt;25.3</td>
+          </tr>
+		  <tr> 
+            <td>[empty]</td>
+            <td>Empty data is matched</td>
+            <td></td>
+            <td>[empty]</td>
+          </tr>
+		  <tr> 
+            <td>[nonempty]</td>
+            <td>Data which is not empty is matched</td>
+            <td></td>
+            <td>[nonempty]</td>
+          </tr>
+        </table>
+		
+		<a name="implement" id="implement"></a>
+        <h2>How to implement the filter grid bar</h2>
+        <p>First you need to load the script's javascript file (tablefilter.js) 
+          in the <code>head</code> section of your web page</p> 
+		  
+    <pre name="code" class="javascript">
+	&lt;script type=&quot;text/javascript&quot; language=&quot;javascript&quot; src=&quot;TableFilter/tablefilter.js&quot;&gt;&lt;/script&gt;
+	</pre>
+    <p>and make sure that 
+          the table you'd like to make filterable has a unique <code>id</code>.</p>
+        <p>Here you have an example of a regular html table: </p>
+        <table width="600" cellspacing="0" cellpadding="0">
+          <tr> 
+            <th align="left">From</th>
+            <th align="left">Destination</th>
+            <th align="left">Road Distance (km)</th>
+            <th align="left">By Air (hrs)</th>
+            <th align="left" width="15%">By Rail (hrs)</th>
+          </tr>
+          <tr> 
+            <td><strong>Sydney</strong></td>
+            <td>Adelaide</td>
+            <td>1412</td>
+            <td>1.4</td>
+            <td>25.3</td>
+          </tr>
+          <tr> 
+            <td><strong>Sydney</strong></td>
+            <td>Brisbane</td>
+            <td>982</td>
+            <td>1.5</td>
+            <td>16</td>
+          </tr>
+          <tr> 
+            <td><strong>Sydney</strong></td>
+            <td>Canberra</td>
+            <td>286</td>
+            <td>.6</td>
+            <td>4.3</td>
+          </tr>
+          <tr> 
+            <td><strong>Sydney</strong></td>
+            <td>Melbourne</td>
+            <td>872</td>
+            <td>1.1</td>
+            <td>10.5</td>
+          </tr>
+          <tr> 
+            <td><strong>Adelaide</strong></td>
+            <td>Perth</td>
+            <td>2781</td>
+            <td>3.1</td>
+            <td>38</td>
+          </tr>
+          <tr> 
+            <td><strong>Adelaide</strong></td>
+            <td>Alice Springs</td>
+            <td>1533</td>
+            <td>2</td>
+            <td>20.25</td>
+          </tr>
+          <tr> 
+            <td><strong>Adelaide</strong></td>
+            <td>Brisbane</td>
+            <td>2045</td>
+            <td>2.15</td>
+            <td>40</td>
+          </tr>
+        </table>
+        <p>Below the same table with a filtering grid generated automatically 
+          (<code>id=&quot;table1&quot;</code>):</p>
+        <table id="table1" class="mytable" cellspacing="0" cellpadding="0" >
+          <tr> 
+            <th>From</th>
+            <th>Destination</th>
+            <th>Road Distance (km)</th>
+            <th>By Air (hrs)</th>
+            <th width="15%">By Rail (hrs)</th>
+          </tr>
+          <tr> 
+            <td><strong>Sydney</strong></td>
+            <td>Adelaide</td>
+            <td>1412</td>
+            <td>1.4</td>
+            <td>25.3</td>
+          </tr>
+          <tr> 
+            <td><strong>Sydney</strong></td>
+            <td>Brisbane</td>
+            <td>982</td>
+            <td>1.5</td>
+            <td>16</td>
+          </tr>
+          <tr> 
+            <td><strong>Sydney</strong></td>
+            <td>Canberra</td>
+            <td>286</td>
+            <td>.6</td>
+            <td>4.3</td>
+          </tr>
+          <tr> 
+            <td><strong>Sydney</strong></td>
+            <td>Melbourne</td>
+            <td>872</td>
+            <td>1.1</td>
+            <td>10.5</td>
+          </tr>
+          <tr> 
+            <td><strong>Adelaide</strong></td>
+            <td>Perth</td>
+            <td>2781</td>
+            <td>3.1</td>
+            <td>38</td>
+          </tr>
+          <tr> 
+            <td><strong>Adelaide</strong></td>
+            <td>Alice Springs</td>
+            <td>1533</td>
+            <td>2</td>
+            <td>20.25</td>
+          </tr>
+          <tr> 
+            <td><strong>Adelaide</strong></td>
+            <td>Brisbane</td>
+            <td>2045</td>
+            <td>2.15</td>
+            <td>40</td>
+          </tr>
+        </table>
+        <script language="javascript" type="text/javascript">
+		//<![CDATA[
+			var tf = new TF('table1');
+			tf.AddGrid();
+		//]]>
+		</script>
+        <p>There 3 different ways to generate the filter grid bar:</p>
+        <ul>
+          
+      <li>invoke the <code>setFilterGrid</code> function: </li>
+        </ul>
+        <pre name="code" class="javascript">&lt;script language=&quot;javascript&quot; type=&quot;text/javascript&quot;&gt;
+	var tf = setFilterGrid(&quot;table1&quot;);
+&lt;/script&gt; </pre>
+        <ul>
+          <li>add a <strong><code>filterable</code></strong> class to desired 
+            table (unobtrusive method): </li>
+        </ul>
+        <pre name="code" class="html">&lt;table id=&quot;table1&quot; cellspacing=&quot;0&quot; class=&quot;mytable filterable&quot; &gt;</pre>
+        <ul>
+          
+      <li>instantiate a <strong><code>TF</code></strong> object: </li>
+        </ul>
+        <pre name="code" class="javascript">&lt;script language=&quot;javascript&quot; type=&quot;text/javascript&quot;&gt;
+	var tf01 = new TF('table1');
+	tf01.AddGrid();
+&lt;/script&gt; </pre>
+        <p>If your document contains several tables (like this page), it is important 
+          to define unique ids, otherwise the script will not work properly. </p>
+        <p>The <code>setFilterGrid()</code> function or the <code>TF</code> class 
+          accepts 2 additional parameters that will be explained in the next tables. 
+          In the example below, by specifing a row number as a &quot;reference&quot; 
+          row, we tell the function which row to use in order to generate the 
+          right number of filters: </p>
+        <table id="table2" class="mytable" cellspacing="0" cellpadding="0" >
+          <tr> 
+            <td colspan="5"><strong>This is the table caption </strong></td>
+          </tr>
+          <tr> 
+            <th>From</th>
+            <th>Destination</th>
+            <th>Road Distance (km)</th>
+            <th>By Air (hrs)</th>
+            <th width="15%">By Rail (hrs)</th>
+          </tr>
+          <tr> 
+            <td><strong>Sydney</strong></td>
+            <td>Adelaide</td>
+            <td>1412</td>
+            <td>1.4</td>
+            <td>25.3</td>
+          </tr>
+          <tr> 
+            <td><strong>Sydney</strong></td>
+            <td>Brisbane</td>
+            <td>982</td>
+            <td>1.5</td>
+            <td>16</td>
+          </tr>
+          <tr> 
+            <td><strong>Sydney</strong></td>
+            <td>Canberra</td>
+            <td>286</td>
+            <td>.6</td>
+            <td>4.3</td>
+          </tr>
+          <tr> 
+            <td><strong>Sydney</strong></td>
+            <td>Melbourne</td>
+            <td>872</td>
+            <td>1.1</td>
+            <td>10.5</td>
+          </tr>
+          <tr> 
+            <td><strong>Adelaide</strong></td>
+            <td>Perth</td>
+            <td>2781</td>
+            <td>3.1</td>
+            <td>38</td>
+          </tr>
+          <tr> 
+            <td><strong>Adelaide</strong></td>
+            <td>Alice Springs</td>
+            <td>1533</td>
+            <td>2</td>
+            <td>20.25</td>
+          </tr>
+          <tr> 
+            <td><strong>Adelaide</strong></td>
+            <td colspan="2" bgcolor="#FFFFCC">Brisbane2045</td>
+            <td>2.15</td>
+            <td>40</td>
+          </tr>
+        </table>
+        <script language="javascript" type="text/javascript">
+				//<![CDATA[
+					var tf02 = new TF("table2",2);
+					tf02.AddGrid();
+				//]]>
+				</script>
+        <pre name="code" class="javascript">var tf02 = setFilterGrid(&quot;table2&quot;,2);</pre>
+        <p>or</p>
+        <pre name="code" class="javascript">var tf02 = new TF("table2",2);
+tf02.AddGrid();</pre>
+        <p>Here we have specified row number <strong>2</strong>, that is the third 
+          row from the top. The 1st row is number <strong>0</strong>. Since the 
+          1st row doesn't contain the right number of columns, we need to use 
+          the second parameter of the function in order to calculate the <em>right 
+          number of columns</em> and also to define <em>from which row should 
+          start the filtering process</em>. Note that merged cells (<code>&lt;td 
+          colspan=&quot;2&quot;&gt;</code>) are simply skipped. </p>
+        <p>By default, the script adds text boxes (<code>&lt;input&gt;</code>). 
+          As you will see in the next example, you can also decide to <strong>not</strong> 
+          display a filter or use <strong>drop-down lists</strong> (<code>&lt;select&gt;</code>) 
+          instead of text boxes:</p>
+        <table id="table3" class="mytable" cellspacing="0" cellpadding="0">
+          <tr> 
+            <td colspan="5"><strong>This is the table caption </strong></td>
+          </tr>
+          <tr> 
+            <th>From</th>
+            <th>Destination</th>
+            <th>Road Distance (km)</th>
+            <th>By Air (hrs)</th>
+            <th width="15%">By Rail (hrs)</th>
+          </tr>
+          <tr> 
+            <td><strong>Sydney</strong></td>
+            <td>Adelaide</td>
+            <td>1412</td>
+            <td>1.4</td>
+
+            <td>25.3</td>
+          </tr>
+          <tr> 
+            <td><strong>Sydney</strong></td>
+            <td>Brisbane</td>
+            <td>982</td>
+            <td>1.5</td>
+            <td>16</td>
+          </tr>
+          <tr> 
+            <td><strong>Sydney</strong></td>
+            <td>Canberra</td>
+            <td>286</td>
+            <td>.6</td>
+            <td>4.3</td>
+          </tr>
+          <tr> 
+            <td><strong>Sydney</strong></td>
+            <td>Melbourne</td>
+            <td>872</td>
+            <td>1.1</td>
+            <td>10.5</td>
+          </tr>
+          <tr> 
+            <td><strong>Adelaide</strong></td>
+            <td>Perth</td>
+            <td>2781</td>
+            <td>3.1</td>
+            <td>38</td>
+          </tr>
+          <tr> 
+            <td><strong>Adelaide</strong></td>
+            <td>Alice Springs</td>
+            <td>1533</td>
+            <td>2</td>
+            <td>20.25</td>
+          </tr>
+          <tr> 
+            <td><strong>Adelaide</strong></td>
+            <td>Brisbane</td>
+            <td>2045</td>
+            <td>2.15</td>
+            <td>40</td>
+          </tr>
+        </table>
+        <script language="javascript" type="text/javascript">
+				//<![CDATA[
+					var table3Filters = {
+						col_0: "select",
+						col_4: "none",
+						btn: true						
+					}
+					var tf03 = new TF("table3",2,table3Filters);
+					tf03.AddGrid();
+				//]]>
+				</script>
+        <p>To do that you just need to declare a <em>literal object</em> (configuration 
+          object) in which you specify which filters should be displayed as drop-down 
+          lists or simply hidden:</p>
+        
+    <pre name="code" class="javascript">&lt;script language=&quot;javascript&quot; type=&quot;text/javascript&quot;&gt;
+	var table3Filters = {
+		col_0: &quot;select&quot;,
+		col_4: &quot;none&quot;,
+		btn: true
+	}
+ 	var tf03 = setFilterGrid(&quot;table3&quot;,2,table3Filters);
+&lt;/script&gt</pre>
+        <p>or</p>
+        <pre name="code" class="javascript">&lt;script language=&quot;javascript&quot; type=&quot;text/javascript&quot;&gt;
+	var table3Filters = {
+		col_0: &quot;select&quot;,
+		col_4: &quot;none&quot;,
+		btn: true
+	}
+	var tf03 = new TF(&quot;table3&quot;,2,table3Filters);
+	tf03.AddGrid();
+&lt;/script&gt;</pre>
+        <p>You can name the <em>configuration object</em> as you want, but don't 
+          forget to add it to the parameters of the <code>setFilterGrid</code>() 
+          function or <code>TF</code> class. It is important to respect the syntax 
+          and naming convention as shown above. There are only 2 values: <code>&quot;<strong>none</strong>&quot;</code> 
+          hides the text box for the designated column and <code>&quot;<strong>select</strong>&quot;</code> 
+          creates a drop-down list with only 1 occurrence of each cell data. Similarly 
+          to row designation, here the first column is column number <strong>0</strong>: 
+          <code><strong>col_0</strong></code>.</p>
+        <p>The button &quot;go&quot; in the grid can also be changed. By adding 
+          the <code><strong>btn_text</strong></code> property with a desired value, 
+          you can modify the text of the button. You will find an exhaustive list 
+          of properties in the <a href="doc.php?l=">documentation</a> 
+          page. </p>
+		
+		<a name="doc" id="doc"></a>
+        <h2>Documentation</h2>
+        <p>For more information about the script configuration check the <a href="doc.php?l=">documentation</a> 
+          page.</p>
+		  
+		<a name="last" id="last"></a>
+        <h2>Last thing...</h2>
+        <p>I hope you will find this script useful. Feel free to use and change 
+          this script, however I will be grateful if you could <a href="contact.php">inform 
+          me</a> about any usage or modification. </p>
+        <h2>Enough words</h2>
+		<p>
+			<a href="dwn.php" class="btndwn" title="Download latest release"></a>
+			<br/>
+		</p>
+        <hr class="clearBoth" />
+	</div>
+	<!-- END CONTENT -->
+	
+	<div id="footer"></div>
+	 <!-- footer nav -->
+	
+	<div style="float:left; margin:10px 5px 0 25px;">
+		<img border="0" src="images/ads-free-01.png" style="border:0;" alt="E.n.j.o.y.  ads-free content!" title="E.n.j.o.y.  ads-free content!"/>
+	</div>
+	
+	<div style="float:left; margin:10px 5px 0 5px;">
+	<!-- AddThis Button BEGIN -->
+	<!--
+	<script type="text/javascript">addthis_pub  = 'maxgug';</script>
+	<a href="http://www.addthis.com/bookmark.php" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()" onclick="return addthis_sendto()">
+	<img src="http://s9.addthis.com/button1-share.gif" width="125" height="16" border="0" alt="" /></a>
+	<script type="text/javascript" src="http://s7.addthis.com/js/152/addthis_widget.js"></script>
+	-->
+	<!-- AddThis Button END -->
+	</div>
+	
+	<div class="footer_nav" style="float:right; margin:10px 5px 0 5px;">
+	<a href="http://edittable.free.fr" target="_blank" title="ezEditTable is an open source javascript code aimed at enhancing regular HTML tables by adding features such as inline editing components, advanced selection and keyboard navigation - Developed by Max Guglielmi">ezEditTable</a>  | 
+	<a href="http://mguglielmi.free.fr" title="Developed by Max Guglielmi">© Max Guglielmi</a>
+	</div>
+	
+	<div style="float:right; margin:5px 5px 0 5px;">
+	<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+		<input type="hidden" name="cmd" value="_donations">
+		<input type="hidden" name="business" value="maxgug@hotmail.com">
+		<input type="hidden" name="item_name" value="HTML Table Filter Generator">
+		<input type="hidden" name="no_shipping" value="0">
+		<input type="hidden" name="no_note" value="1">
+		<input type="hidden" name="lc" value="US">
+		<input type="hidden" name="currency_code" value="USD">
+		<input type="hidden" name="tax" value="0">
+		<input type="hidden" name="bn" value="PP-DonationsBF">
+		<input type="image" src="images/x-click-but04.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!" style="border:0;">
+		<img alt="" border="0" src="images/pixel.gif" width="1" height="1" style="border:0;">
+	</form>
+	</div>
+
+	<div class="footer_nav" style="float:right; margin:10px 5px 0 5px;">
+		<a href="http://www.hotscripts.com/?RID=N491452" target="_blank">HotScripts.com</a>
+	</div>
+	<!-- end footer nav -->
+				
+				</div>
+</body>
+</html>
